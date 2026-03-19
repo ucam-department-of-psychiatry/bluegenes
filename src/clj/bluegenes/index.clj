@@ -95,12 +95,12 @@
     (when-let [ga4-id (not-empty (:google-analytics env))]
       [:script {:async true :src (str "https://www.googletagmanager.com/gtag/js?id=" ga4-id)}])
     [:script "window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments)};"]
-    (include-css "https://cdnjs.cloudflare.com/ajax/libs/gridlex/2.2.0/gridlex.min.css")
-    (include-css "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+    (include-css (use-deployment-path "/css/lib/gridlex-2.2.0.min.css"))
+    (include-css (use-deployment-path "/css/lib/bootstrap-3.3.7.min.css"))
     (include-css (use-deployment-path bluegenes-css))
     (include-css (use-deployment-path im-tables-css))
-    (include-css "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
-    (include-css "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css")
+    (include-css (use-deployment-path "/css/lib/font-awesome-4.7.0.min.css"))
+    (include-css (use-deployment-path "/css/lib/highlight.js-9.12.0.min.css"))
     ; Meta data:
     [:meta {:charset "utf-8"}]
     [:meta {:content "width=device-width, initial-scale=1", :name "viewport"}]
@@ -121,16 +121,16 @@
   ; Javascript:
     ;; This favicon is dynamically served; see routes.clj.
     [:link {:href (use-deployment-path "/favicon.ico") :type "image/x-icon" :rel "shortcut icon"}]
-    [:script {:src "https://cdn.intermine.org/js/intermine/imjs/latest/im.min.js"}]
+    [:script {:src (use-deployment-path "/js/lib/im-4.0.0.min.js")}]
     [:script {:crossorigin "anonymous"
               :integrity "sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
-              :src "https://code.jquery.com/jquery-3.1.0.min.js"}]
+              :src (use-deployment-path "/js/lib/jquery-3.1.0.min.js")}]
     [:script {:crossorigin "anonymous"
-              :src "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"}]
+              :src (use-deployment-path "/js/lib/bootstrap-3.3.7.min.js")}]
     ;; Graphing library
-    [:script {:src "https://cdn.jsdelivr.net/npm/vega@5.20.2"}]
-    [:script {:src "https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"}]
-    [:script {:src "https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"}]
+    [:script {:src (use-deployment-path "/js/lib/vega-5.20.2.min.js")}]
+    [:script {:src (use-deployment-path "/js/lib/vega-lite-5.1.0.min.js")}]
+    [:script {:src (use-deployment-path "/js/lib/vega-embed-6.17.0.min.js")}]
     (when (:semantic-markup options)
       [:script {:type "application/ld+json"}
        (generate-string (fetch-semantic-markup options))])]))
