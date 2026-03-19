@@ -6,8 +6,8 @@
             [taoensso.timbre :refer [error]]
             [bluegenes.utils :as utils]))
 
-(def bluegenes-css "public/css/site.css")
-(def im-tables-css "public/css/im-tables.css")
+(def bluegenes-css "public/css/compiled/site.css")
+(def im-tables-css "public/css/compiled/im-tables.css")
 
 (defn resource-path [path]
   (str "resources/" path))
@@ -37,4 +37,3 @@
       (let [css-file (resource-path css-file)]
         (io/copy (io/file css-file)
                  (io/file (utils/insert-filename-css css-file fingerprint)))))))
-

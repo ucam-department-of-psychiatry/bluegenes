@@ -105,7 +105,7 @@
                      cond-> [[:inner 0]]
                      cond->> [[:inner 0]]}}
 
-  :aliases ~(let [compile-less ["npx" "lessc" "less/site.less" "resources/public/css/site.css"]
+  :aliases ~(let [compile-less ["npx" "lessc" "less/site.less" "resources/public/css/compiled/site.css"]
                   compile-less-prod (conj compile-less "-x")
                   watch-less ["npx" "chokidar" "less/**/*.less" "-c" (clojure.string/join " " compile-less) "--initial"]
                   watch-less-silent (conj watch-less "--silent")]
@@ -137,10 +137,10 @@
   :test-paths ["test/cljs"]
 
   :clean-targets ^{:protect false} ["resources/public/js/compiled" "target"
-                                    "out" "resources/public/css"
+                                    "out" "resources/public/css/compiled"
                                     "test/js"]
 
-  :figwheel {:css-dirs ["resources/public/css"]
+  :figwheel {:css-dirs ["resources/public/css/compiled"]
              ;:ring-handler bluegenes.handler/handler
              :reload-clj-files {:cljc true}}
 

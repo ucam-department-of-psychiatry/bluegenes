@@ -15,9 +15,9 @@
 (def bundle-path (-> (utils/read-fingerprints) (utils/get-bundle-path)))
 (def bundle-hash (utils/parse-bundle-hash bundle-path))
 
-(def bluegenes-css (cond-> "/css/site.css"
+(def bluegenes-css (cond-> "/css/compiled/site.css"
                      (not= bundle-hash "dev") (utils/insert-filename-css bundle-hash)))
-(def im-tables-css (cond-> "/css/im-tables.css"
+(def im-tables-css (cond-> "/css/compiled/im-tables.css"
                      (not= bundle-hash "dev") (utils/insert-filename-css bundle-hash)))
 
 (defn escape-quotes [s]

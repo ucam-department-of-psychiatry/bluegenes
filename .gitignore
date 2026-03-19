@@ -5,7 +5,7 @@
 /resources/public/js/min
 /resources/public/js/test
 /resources/public/vendor
-/resources/public/css/*.css
+/resources/public/css/compiled
 /resources/public/tools/*
 /cypress/screenshots
 /cypress/videos
