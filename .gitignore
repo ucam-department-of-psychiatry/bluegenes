@@ -32,3 +32,4 @@ prepros.cfg
 /*.jks
 /.lein-env
 *~
+.ignore
