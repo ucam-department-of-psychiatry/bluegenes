@@ -13,7 +13,7 @@
   (str "resources/" path))
 
 (defn copy-im-tables-css []
-  (let [source-file im-tables-css
+  (let [source-file "public/css/im-tables.css"
         target-file (resource-path im-tables-css)]
     ;; css dir is missing after a lein clean.
     (io/make-parents target-file)
