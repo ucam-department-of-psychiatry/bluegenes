@@ -27,7 +27,7 @@
               ;; and with much better errors.
               (?read-string) (:bluegenes-deploy-path))))
 
-(defproject org.intermine/bluegenes "1.4.5"
+(defproject org.intermine/bluegenes "1.4.6"
   :licence "LGPL-2.1-only"
   :description "Bluegenes is a Clojure-powered user interface for InterMine, the biological data warehouse"
   :url "http://www.intermine.org"
@@ -74,6 +74,7 @@
                  [binaryage/oops "0.7.0"]
                  [inflections "0.13.2"]
                  [cljsjs/google-analytics "2017.09.21-0"]
+                 [cljsjs/highlight "9.12.0-2"]
                  [day8.re-frame/test "0.1.5"]
                  [cljs-bean "1.5.0"]
                  [org.clojure/data.xml "0.2.0-alpha6"]
@@ -85,7 +86,7 @@
 
                  ; Intermine Assets
                  [org.intermine/imcljs "1.6.0"]
-                 [org.intermine/im-tables "0.15.0"]
+                 [org.intermine/im-tables "0.16.0"]
                  [org.intermine/bluegenes-tool-store "0.2.3"]]
 
   :deploy-repositories {"clojars" {:sign-releases false}}
