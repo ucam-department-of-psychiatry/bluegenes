@@ -121,7 +121,6 @@
   ; Javascript:
     ;; This favicon is dynamically served; see routes.clj.
     [:link {:href (use-deployment-path "/favicon.ico") :type "image/x-icon" :rel "shortcut icon"}]
-    [:script {:src (use-deployment-path "/js/lib/im-4.0.0.min.js")}]
     [:script {:crossorigin "anonymous"
               :integrity "sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
               :src (use-deployment-path "/js/lib/jquery-3.1.0.min.js")}]
